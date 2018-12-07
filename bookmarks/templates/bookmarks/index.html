@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My bookmarks!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        My bookmarks!
+      </h1>
+      <table class="table is-striped">
+        <thead>
+          <tr>
+            <th><i class="far fa-calendar-alt"></i> Created at</th>
+            <th><i class="fas fa-signature"></i> Name</th>
+            <th><i class="fas fa-link"></i> URL</th>
+          </tr>
+        </thead>
+      {% for bookmark in bookmarks %}
+          <tr>
+            <td>{{ bookmark.created_at }}</td>
+            <td><b>{{ bookmark.name }}</b></td>
+            <td><a href="{{ bookmark.url }}">{{ bookmark.url }}</a></td>
+          </tr>
+      {% endfor %}
+      </table>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <b><i class="fas fa-burn"></i> Powered</b> by <a href="http://djangoproject.com"><i class="fab fa-python"></i> Django</a>
+      </p>
+    </div>
+  </footer>
+  </body>
+</html>
