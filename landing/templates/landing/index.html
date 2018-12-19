@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My bookmarks!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <section class="hero is-medium is-dark is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            MVP with Django
+          </h1>
+          <h2 class="subtitle">
+            Minimum Viable Product
+          </h2>
+            <a href="{% url 'bookmarks:index' %}" class="button is-primary is-outlined">Show me the magic!</a>
+        </div>
+      </div>
+    </section>
+</html>

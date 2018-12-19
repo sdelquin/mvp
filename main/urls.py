@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from landing.views import index
 
 urlpatterns = [
-    path('bookmarks/', include('bookmarks.urls')),
+    path('', index, name='landing'),
+    path('bookmarks/', include('bookmarks.urls', namespace='bookmarks')),
     path('admin/', admin.site.urls),
 ]
