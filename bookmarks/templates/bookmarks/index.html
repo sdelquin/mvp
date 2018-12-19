@@ -26,7 +26,12 @@
       {% for bookmark in bookmarks %}
           <tr>
             <td>{{ bookmark.created_at }}</td>
-            <td><b>{{ bookmark.name }}</b></td>
+            <td>
+              <b>{{ bookmark.name }}</b>
+              {% if bookmark.important %}
+                <i class="far fa-star"></i>
+              {% endif %}
+            </td>
             <td><a href="{{ bookmark.url }}">{{ bookmark.url }}</a></td>
           </tr>
       {% endfor %}
